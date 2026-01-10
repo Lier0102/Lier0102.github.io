@@ -21,7 +21,7 @@ Here is a link to the Hexo docs: <https://hexo.io/docs/>
 
 You can also embed images:
 
-![A simple example image](https://oldcdn.yangbingdong.com/img/hello-world/start-trip.png)
+![A simple example image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRHimffZ0JBjM0CULmVGi66KOSN0JOYdzoyA&s)
 
 ## Lists
 
