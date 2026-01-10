@@ -49,6 +49,10 @@ jobs:
           npx hexo clean
           npx hexo generate --debug --safe
 
+      - name: Probe file IO
+        run: |
+          node -e "const fs=require('fs');const b=fs.readFileSync('source/robots.txt');console.log('source/robots.txt bytes',b.length);fs.writeFileSync('public/_probe.txt',b);console.log('public/_probe.txt bytes',fs.statSync('public/_probe.txt').size);"
+
       - name: Verify build output
         run: |
           ls -la public
