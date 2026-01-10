@@ -35,6 +35,14 @@ jobs:
       - name: Build with Hexo
         run: npx hexo generate
 
+      - name: Verify build output
+        run: |
+          ls -la public
+          if [ ! -s public/index.html ]; then
+            echo "public/index.html is missing or empty"
+            exit 1
+          fi
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
