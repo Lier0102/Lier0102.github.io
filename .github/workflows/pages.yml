@@ -20,52 +20,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "16"
-
-      - name: Install dependencies
+      - name: Build with Hexo (Node 10 container)
         run: |
-          sudo apt-get update
-          sudo apt-get install -y libpng-dev
-          npm install
-
-      - name: Inspect source files
-        run: |
-          ls -la source/robots.txt source/TEP.png source/_posts/hello-world.md
-          wc -c source/robots.txt source/_posts/hello-world.md
-          sed -n '1,20p' source/robots.txt
-          echo "Theme file sizes:"
-          wc -c themes/next/layout/index.swig themes/next/source/css/main.styl themes/next/source/lib/fastclick/LICENSE
-
-      - name: Inspect Hexo filters
-        run: |
-          grep -R --line-number "after_generate" node_modules || true
-          grep -R --line-number "extend\\.filter\\.register" node_modules || true
-
-      - name: Build with Hexo
-        run: |
-          npx hexo version
-          npx hexo clean
-          npx hexo generate --debug --safe
-
-      - name: Probe file IO
-        run: |
-          node -e "const fs=require('fs');const b=fs.readFileSync('source/robots.txt');console.log('source/robots.txt bytes',b.length);fs.writeFileSync('public/_probe.txt',b);console.log('public/_probe.txt bytes',fs.statSync('public/_probe.txt').size);"
-
-      - name: Verify build output
-        run: |
-          ls -la public
-          echo "Zero-sized files (sample):"
-          find public -type f -size 0 | head -n 20
-          echo "Non-empty files (sample):"
-          find public -type f ! -size 0 | head -n 20
-          if [ ! -s public/index.html ]; then
-            echo "public/index.html is missing or empty"
-            exit 1
-          fi
+          docker run --rm \
+            -v "$PWD":/site \
+            -w /site \
+            node:10-buster \
+            bash -lc "apt-get update && apt-get install -y libpng-dev && npm install && npx hexo clean && npx hexo generate"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
