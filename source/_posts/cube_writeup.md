@@ -1,9 +1,10 @@
 ---
-title: [DREAMHACK] cube writeup
-date: 2025-01-10 23:49:28
+title: "[DREAMHACK] cube writeup"
+date: 2026-01-10 23:49:28
 categories: Essay
-tags: [Hexo]
+tags: [writeup]
 ---
+
 빠르게 분석해보겠습니다.
 전에 풀었던 `STB-sandbox`에서 머리가 깨져서 그런가, 동아리 성과 발표회 시간때 5분 투자해서 바로 풀어버렸습니다 ㅋㅋ
 
