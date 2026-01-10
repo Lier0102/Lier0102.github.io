@@ -37,6 +37,8 @@ jobs:
           ls -la source/robots.txt source/TEP.png source/_posts/hello-world.md
           wc -c source/robots.txt source/_posts/hello-world.md
           sed -n '1,20p' source/robots.txt
+          echo "Theme file sizes:"
+          wc -c themes/next/layout/index.swig themes/next/source/css/main.styl themes/next/source/lib/fastclick/LICENSE
 
       - name: Inspect Hexo filters
         run: |
