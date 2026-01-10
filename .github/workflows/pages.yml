@@ -32,6 +32,12 @@ jobs:
           sudo apt-get install -y libpng-dev
           npm install
 
+      - name: Inspect source files
+        run: |
+          ls -la source/robots.txt source/TEP.png source/_posts/hello-world.md
+          wc -c source/robots.txt source/_posts/hello-world.md
+          sed -n '1,20p' source/robots.txt
+
       - name: Build with Hexo
         run: |
           npx hexo version
