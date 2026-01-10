@@ -47,7 +47,7 @@ jobs:
         run: |
           npx hexo version
           npx hexo clean
-          npx hexo generate --debug
+          npx hexo generate --debug --safe
 
       - name: Verify build output
         run: |
