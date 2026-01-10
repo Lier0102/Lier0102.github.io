@@ -33,7 +33,10 @@ jobs:
           npm install
 
       - name: Build with Hexo
-        run: npx hexo generate
+        run: |
+          npx hexo version
+          npx hexo clean
+          npx hexo generate --debug
 
       - name: Verify build output
         run: |
