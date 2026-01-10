@@ -40,8 +40,8 @@ jobs:
 
       - name: Inspect Hexo filters
         run: |
-          grep -R --line-number "after_generate" node_modules/hexo-* || true
-          grep -R --line-number "extend\\.filter\\.register" node_modules/hexo-* || true
+          grep -R --line-number "after_generate" node_modules || true
+          grep -R --line-number "extend\\.filter\\.register" node_modules || true
 
       - name: Build with Hexo
         run: |
