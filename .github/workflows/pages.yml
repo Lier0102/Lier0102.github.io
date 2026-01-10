@@ -25,8 +25,8 @@ jobs:
           docker run --rm \
             -v "$PWD":/site \
             -w /site \
-            node:10-buster \
-            bash -lc "apt-get update && apt-get install -y libpng-dev && npm install && npx hexo clean && npx hexo generate"
+            node:12-bullseye \
+            bash -lc "npm install && npx hexo clean && npx hexo generate"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
