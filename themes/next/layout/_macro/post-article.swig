@@ -249,9 +249,9 @@
 <div>
 	  {% if not is_index %}
 	    <p id="div-border-left-red">
-		Author：<b>ookamiAntD Yang</b></br>
+		Author：<b>BANKAI</b></br>
 		Link：<a href="{{ url_for(page.path) }}" title="{{ page.title }}">{{ page.permalink }}</a><br/>
-		Contact：<a>yangbingdong1994@gmail.com</a><br/>
+		Contact：<a>bankai31337@proton.me</a><br/>
 	   <b>This post is licensed under <a target="_blank" title="Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</b><br/>
 	    <b>Please credit the source if you repost.</b>
 	    </p>
