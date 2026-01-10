@@ -132,28 +132,28 @@ live2d:
     opacityOnHover: 0.5 # Opacity on hover
 
 # Minifier options
-all_minifier: true
+all_minifier: false
 
 html_minifier:
-  enable: true
+  enable: false
   ignore_error: false
-  exclude: 
+  exclude:
 
 css_minifier:
-  enable: true
-  exclude: 
+  enable: false
+  exclude:
     - '/home/ybd/data/git-repo/github/own/blog/themes/next/source/static/css/main.0603c539.css'
 
 js_minifier:
-  enable: true
+  enable: false
   mangle: true
   output:
   compress:
-  exclude: 
+  exclude:
     - '/home/ybd/data/git-repo/github/own/blog/themes/next/source/static/js/*.*.js'
 
 image_minifier:
-  enable: true
+  enable: false
   interlaced: false
   multipass: false
   optimizationLevel: 2
