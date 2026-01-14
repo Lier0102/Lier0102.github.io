@@ -121,7 +121,7 @@ change to (val):
 복잡한 프로그램이 아니라 얼핏 견주어 보면 어디에 쓰이는 문자열들인지 확인할 수 있습니다..
 
 `rbp-0x10`을 기준으로 `0x1000`만큼 `읽기/쓰기/실행`이 가능한 영역을 확보해줍니다.
-
+<!--more-->
 ```
 pwndbg> vmmap
 LEGEND: STACK | HEAP | CODE | DATA | WX | RODATA
