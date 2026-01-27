@@ -1,5 +1,5 @@
 ---
-title: "[DREAMHACK] bytechanger writeup"
+title: [V8] V8 공부 - 빌드"
 date: 2026-01-27 21:25
 categories: Essay
 tags: [V8]
