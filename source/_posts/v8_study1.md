@@ -1,5 +1,5 @@
 ---
-title: [V8] V8 공부 - 빌드"
+title: "[V8] V8 공부 - 빌드"
 date: 2026-01-27 21:25:11
 categories: Essay
 tags: [V8]
