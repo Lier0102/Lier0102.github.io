@@ -104,7 +104,7 @@ int __fastcall main(int argc, const char **argv, const char **envp)
   return 0;
 }
 ```
-
+<!--more-->
 어... 의사코드가 맞긴 한데, 좀 보는 데 불편한 감이 없잖아 있습니다.
 ida 기능을 잘 안... 쓰는 게 아니라 그냥 안 쓰는 편이라 변수명만 살짝 바꾸고 봤습니다.
 
