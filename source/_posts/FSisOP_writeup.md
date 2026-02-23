@@ -55,6 +55,7 @@ patchelf --set-interpreter ld-linux-x86-64.so.2 ./prob
 
 보호기법도 정상적이네요...  
 이제 코드를 볼게요..
+<!--more-->
 ![image.png](https://dreamhack-media.s3.amazonaws.com/attachments/4d2acbdb340720c5caa4299a3ac67130b48473ef804a26194bbc533d1a9bf4a8.png)
 
 문제 제목이 `FSisOP`니까.. `puts()`, `exit()` 써서 마지막에 흐름을 조작할 수 있을 것 같다는 느낌이 드네요..  
