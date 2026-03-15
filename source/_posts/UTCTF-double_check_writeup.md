@@ -27,7 +27,7 @@ tags: [CTF]
 > https://github.com/Jarpiano/utctf-profile
 
 Hugo SSG 템플릿을 클론해서 정적 사이트를 배포하려는데, 배포 전에 코드가 "깨끗한지" 확인해달라는 문제다.
-
+<!--more-->
 ---
 
 ## 🔍 풀이 과정
