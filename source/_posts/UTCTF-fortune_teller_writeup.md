@@ -1,6 +1,6 @@
 ---
 title: "[UTCTF] Fortune Teller writeup"
-date: 2026-03-12 17:29:00
+date: 2026-03-15 18:29:00
 categories: Essay
 tags: [CTF]
 ---
