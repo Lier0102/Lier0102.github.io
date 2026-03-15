@@ -31,6 +31,7 @@ ciphertext (hex) = 3cff226828ec3f743bb820352aff1b7021b81b623cff31767ad428672ef6
 FLAG는 `output_5`를 4바이트 반복 키로 사용해서 XOR 암호화되어 있다.
 
 ---
+<!--more-->
 
 ## 배경 지식
 
