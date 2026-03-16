@@ -188,10 +188,19 @@ ulong read_input(void *param_1,int param_2)
 ## rootfs에서 libc.so 추출
 
 ### 1. 일단 열기
-`binwalk -e ./rootfs`
+`binwalk -e ./rootfs`  
+
+```bash
+>> ls
+0  0.gz  <--- 이거 0.gz가 풀린 게 0임. 이 친구 cpio로 열어주면 됨
+```
+```bash
+cat 0 | cpio -idm
+```
 
 ### 2. 일단 꺼내기
-`_rootfs.extracted/` 라는 폴더가 생김, 여기에서 `lib/`로 이동한 뒤,  
+`_rootfs.extracted/` 라는 폴더 내에 아래와 같은 내용이 있음.  
+여기에서 `lib/`로 이동한 뒤,  
 
 ```bash
 ld-musl-aarch64.so.1  libatomic.so.1      libc.so      libgcc_s.so.1
@@ -208,6 +217,28 @@ libatomic.so          libatomic.so.1.2.0  libgcc_s.so  modules
 `nc localhost 8000`으로 접속했다.  
 
 `qemu`내에선 `/usr/bin/chal`에 바이너리가 있는 걸 확인할 수 있다.  
+아, `binwalk`로 버전때문에 열리지 않았는데, 중간에 그 오류가  
+```bash
+binwalk -e ./rootfs
+Traceback (most recent call last):
+  File "/usr/bin/binwalk", line 2, in <module>
+    from binwalk.__main__ import main
+  File "/usr/lib/python3/dist-packages/binwalk/__main__.py", line 24, in <module>
+    import binwalk.modules
+  File "/usr/lib/python3/dist-packages/binwalk/modules/__init__.py", line 3, in <module>
+    from binwalk.modules.disasm import Disasm
+  File "/usr/lib/python3/dist-packages/binwalk/modules/disasm.py", line 21, in <module>
+    class Disasm(Module):
+  File "/usr/lib/python3/dist-packages/binwalk/modules/disasm.py", line 60, in Disasm
+    Architecture(type=capstone.CS_ARCH_AARCH64,
+AttributeError: module 'capstone' has no attribute 'CS_ARCH_AARCH64'. Did you mean: 'CS_ARCH_ARM64'?
+```
+
+이거였다. 이 친구는  
+`sudo sed -i 's/CS_ARCH_AARCH64/CS_ARCH_ARM64/g' /usr/lib/python3/dist-packages/binwalk/modules/disasm.py`
+
+이걸로 해결할 수 있다.  
+검색하디 레딧에 계시던 분이 편하게 명령어를 바로 알려주셨다.
 
 ## FSB로 값 뽑아보기
 ```bash
