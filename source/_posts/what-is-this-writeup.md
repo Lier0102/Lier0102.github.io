@@ -2,7 +2,7 @@
 title: "[DREAMHACK] What Is This??? writeup"
 date: 2026-03-11 22:00:00
 categories: Essay
-tags: [writepu]
+tags: [writeup]
 ---
 
 이번 문제는 역시 암호학에 대한 흥미랄까, 높이는 용도로 사용했다.  
