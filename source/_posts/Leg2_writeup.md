@@ -417,7 +417,7 @@ if args.REMOTE:
     p = remote(HOST, PORT)
     libc = ELF('./libc.so')
 else:
-    p = process(env={"LD_PRELOAD":"./libc.so.6"})
+    p = remote('localhost', '8000')#process(env={"LD_PRELOAD":"./libc.so.6"})
     libc = ELF('./libc.so')
 
 ru(b'your name > ')
