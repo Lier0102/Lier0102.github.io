@@ -20,6 +20,8 @@ tags: [CTF]
 
 ghidra로 열고 entry -> main으로 가면 코드가 간결하다.  
 여기까지만...  
+
+---
 ## 정적분석
 ```bash
 file prob
