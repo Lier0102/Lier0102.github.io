@@ -87,7 +87,7 @@ tags: [CTF]
 차라리 그 때 점심 먹고 돌아왔더라면...  
 
 ---
-<a href="https://ibb.co/WNqB2h1k"><img src="https://i.ibb.co/9mzyrDjb/Screenshot-2026-03-30-at-9-17-43-AM.png" alt="Screenshot-2026-03-30-at-9-17-43-AM" border="0"></a>
+<a href="https://ibb.co/VWhyWVwC"><img src="https://i.ibb.co/RpMnp2j6/Screenshot-2026-03-30-at-9-19-20-AM.png" alt="Screenshot-2026-03-30-at-9-19-20-AM" border="0"></a>
 
 점심을 먹고 돌아와서 풀었다.  
 계속 자습실에 앉아서 개같은 web문제를 풀기 위해  
@@ -103,7 +103,7 @@ llm들한테 말을 걸었다...
 그래서 그만둘 뻔했음.  
 
 ---
-<a href="https://ibb.co/WNqB2h1k"><img src="https://i.ibb.co/9mzyrDjb/Screenshot-2026-03-30-at-9-17-43-AM.png" alt="Screenshot-2026-03-30-at-9-17-43-AM" border="0"></a>
+<a href="https://ibb.co/NgJZsYDs"><img src="https://i.ibb.co/hx4Dy8Qy/Screenshot-2026-03-30-at-9-20-44-AM.png" alt="Screenshot-2026-03-30-at-9-20-44-AM" border="0"></a>
 
 이때가 제일 미친 시간이었다.
 4시에 계속해서 풀리길래  
