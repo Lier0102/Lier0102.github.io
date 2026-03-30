@@ -66,7 +66,7 @@ tags: [CTF]
 쓰기 싫어졌다.  
 
 ---
-![alt text](image.png)
+<a href="https://ibb.co/WNqB2h1k"><img src="https://i.ibb.co/9mzyrDjb/Screenshot-2026-03-30-at-9-17-43-AM.png" alt="Screenshot-2026-03-30-at-9-17-43-AM" border="0"></a>
 어쨌거나 나름대로 개같이 구르다 운좋게 4문제를 풀었다.  
 ...감도 안온다.  
 웹은 처음부터 내가 풀 생각을 하지 않고 바로 llm들한테 넘겼다.  
@@ -87,7 +87,7 @@ tags: [CTF]
 차라리 그 때 점심 먹고 돌아왔더라면...  
 
 ---
-![alt text](image-1.png)
+<a href="https://ibb.co/WNqB2h1k"><img src="https://i.ibb.co/9mzyrDjb/Screenshot-2026-03-30-at-9-17-43-AM.png" alt="Screenshot-2026-03-30-at-9-17-43-AM" border="0"></a>
 
 점심을 먹고 돌아와서 풀었다.  
 계속 자습실에 앉아서 개같은 web문제를 풀기 위해  
@@ -103,7 +103,7 @@ llm들한테 말을 걸었다...
 그래서 그만둘 뻔했음.  
 
 ---
-![alt text](image-2.png)
+<a href="https://ibb.co/WNqB2h1k"><img src="https://i.ibb.co/9mzyrDjb/Screenshot-2026-03-30-at-9-17-43-AM.png" alt="Screenshot-2026-03-30-at-9-17-43-AM" border="0"></a>
 
 이때가 제일 미친 시간이었다.
 4시에 계속해서 풀리길래  
